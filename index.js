@@ -1,6 +1,14 @@
 const express = require('express');
 const app = express();
 
+// https://www.youtube.com/watch?v=pKd0Rpw7O48 - Watch this video 
+
+// https://www.youtube.com/watch?v=l8WPWK9mS5M
+
+
+
+app.use(express.json()); //middle ware - for reading the content from post body
+
 const data = [
     {
         name: "Atanu Nayak", 
@@ -42,6 +50,19 @@ app.get('/data/findByDataAddress/:dataAddress', (req, res) => {
     
     res.send(req_data);
 });
+
+
+app.post('/data/add/', (req, res) => {
+    const postData = {
+        name : req.body.name, 
+        age : req.body.age,
+        company : req.body.company,
+        dataAddress : req.body.dataAddress,
+    };
+
+    data.push(postData);
+    res.send(data);
+})
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
