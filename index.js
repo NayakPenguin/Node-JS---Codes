@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const { v4: uuidv4 } = require('uuid');
 
 // https://www.youtube.com/watch?v=pKd0Rpw7O48 - Watch this video 
 
@@ -53,11 +54,13 @@ app.get('/data/findByDataAddress/:dataAddress', (req, res) => {
 
 
 app.post('/data/add/', (req, res) => {
+    const id = uuidv4();
+
     const postData = {
         name : req.body.name, 
         age : req.body.age,
         company : req.body.company,
-        dataAddress : req.body.dataAddress,
+        dataAddress : id,
     };
 
     data.push(postData);
