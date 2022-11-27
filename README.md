@@ -7,3 +7,5 @@ There are separate branches for different codes.
   3. mongoDb-Basic : Contains the basic connection details with mongoDB cloud and get/post codes
 
 This is a open source project, contributors are always welcome. 
+
+If you have intermidiate level of knowledge and just want revise the backend, : https://www.youtube.com/playlist?list=PLRKyZvuMYSIMjYhIwc6vP2eVb9JI6Phsv
